@@ -7,6 +7,21 @@ import { library } from "./data/fa-library";
 const App = () => {
   const [beerList, setBeerList] = useState([])
 
+  useEffect(() => {
+    setBeers();
+  }, [])
+
+
+  const setBeers = () => {
+    // 4. Do a fetch 
+    fetch(`https://api.punkapi.com/v2/beers`)
+      .then(response => response.json())
+      .then(response => {
+        const beerList = response;
+        setBeerList(beerList);
+      });
+  };
+
   const getApiData = (searchTerm) => {
     // 4. Do a fetch 
     fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
@@ -29,23 +44,36 @@ const App = () => {
       });
   };
 
-  // abv_gt=6
-  // brewed_before=01-2010
+  const getClassic = () => {
+    // 4. Do a fetch 
+    fetch(`https://api.punkapi.com/v2/beers?brewed_before=01-2010`)
+      .then(response => response.json())
+      .then(response => {
+        const apiBeers = response;
+        setBeerList(apiBeers);
 
-  // useEffect(() => {
-  //   setBeerList();
-  //   return () => {
-  //     console.log("Use effect was called")
-  //   }
-  // }, []);
+      });
+  };
+
+ 
+  const getLowpH = () => {
+    // 4. Do a fetch 
+    fetch(`https://api.punkapi.com/v2/beers`)
+      .then(response => response.json())
+      .then(response => {
+        const lowpHBeers = response.filter(beer => beer.ph <=4 && beer.ph!==null);
+        setBeerList(lowpHBeers);
+      });
+  };
 
   return (
     <div className={styles.App}>
-      <NavBar className={styles.navbar} updateSearchText={getApiData} updateABV={getHighABV} />
+      <NavBar className={styles.navbar} updateSearchText={getApiData} updateABV={getHighABV} updateClassic={getClassic} updatepH={getLowpH} />
       <Dashboard className={styles.dashboard} beerList={beerList} />
-      {/* <p>{beerList.map(beerList=> <div className={styles.beer}>{beerList.name}</div>)}</p> */}
     </div>
   );
 }
 
 export default App;
+
+//  { "homepage": "http://mph206.github.io/brew-dog-api",

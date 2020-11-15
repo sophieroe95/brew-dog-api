@@ -1,5 +1,4 @@
-{
-  "name": "punk-beer-api-sophie",
+  {"name": "punk-beer-api-sophie",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

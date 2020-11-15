@@ -8,6 +8,7 @@ const Card = (props) => {
     tagline,
     abv,
     ph,
+    first_brewed,
     description,
   } = props.beer;
 
@@ -20,8 +21,9 @@ const Card = (props) => {
         <p>
           <span>{tagline}</span>
         </p>
-        <p>{abv}</p>
-        <p>{ph}</p>
+        <p>ABV: {abv}</p>
+        <p>pH: {ph}</p>
+        <p>First Brewed: {first_brewed}</p>
         <p>{description}</p>
       </section>
     </div>
