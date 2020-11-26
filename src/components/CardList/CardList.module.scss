@@ -9,8 +9,14 @@
 .card{
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
+    width: 330px;
     align-items: space-evenly;
     justify-content: space-evenly;
     padding: 10px;
+}
+
+@media screen and (max-width: 680px) {
+    .card {
+        width: 240px;
+    }
 }

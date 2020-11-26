@@ -8,7 +8,7 @@ const NavBar = (props) => {
   return (
     < div className={styles.navbar} >
       <h1>Brew Dog API</h1>
-      <SearchBar placeholder="Search for beers..." updateSearchText={props.updateSearchText}  />
+      <SearchBar placeholder="Beer name..." updateSearchText={props.updateSearchText}  />
       <Filter updateABV={props.updateABV} updateClassic={props.updateClassic} updatepH={props.updatepH} />
     </div>
   );

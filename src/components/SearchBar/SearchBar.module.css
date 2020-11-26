@@ -1,6 +1,9 @@
 .search {
   padding: 10px;
 }
+.search input {
+  width: 80px;
+}
 .search .fa {
   padding: 5px;
 }
