@@ -13,7 +13,6 @@ const App = () => {
 
 
   const setBeers = () => {
-    // 4. Do a fetch 
     fetch(`https://api.punkapi.com/v2/beers`)
       .then(response => response.json())
       .then(response => {
@@ -23,7 +22,6 @@ const App = () => {
   };
 
   const getApiData = (searchTerm) => {
-    // 4. Do a fetch 
     fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
       .then(response => response.json())
       .then(response => {
@@ -34,7 +32,6 @@ const App = () => {
   };
 
   const getHighABV = () => {
-    // 4. Do a fetch 
     fetch(`https://api.punkapi.com/v2/beers?abv_gt=6`)
       .then(response => response.json())
       .then(response => {
@@ -45,7 +42,6 @@ const App = () => {
   };
 
   const getClassic = () => {
-    // 4. Do a fetch 
     fetch(`https://api.punkapi.com/v2/beers?brewed_before=01-2010`)
       .then(response => response.json())
       .then(response => {
@@ -57,7 +53,6 @@ const App = () => {
 
  
   const getLowpH = () => {
-    // 4. Do a fetch 
     fetch(`https://api.punkapi.com/v2/beers`)
       .then(response => response.json())
       .then(response => {
@@ -75,5 +70,3 @@ const App = () => {
 }
 
 export default App;
-
-//  { "homepage": "http://mph206.github.io/brew-dog-api",

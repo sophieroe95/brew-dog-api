@@ -6,13 +6,13 @@ const CardList = (props) => {
   const { beerList } = props;
   
   const getCardJsx = (beer) => (
-    <div className={styles.card} key={beer.id}>
+    <div data-cy="card" className={styles.card} key={beer.id}>
       <Card beer={beer} />
     </div>
   );
 
 
-  return <section className={styles.cardList}>{beerList.map(getCardJsx)}</section>;
+  return <section data-cy="cardList" className={styles.cardList}>{beerList.map(getCardJsx)}</section>;
 };
 
 export default CardList;

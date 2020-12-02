@@ -10,12 +10,12 @@ const SearchBar = (props) => {
     const { placeholder, updateSearchText } = props;
   
     // 2. Event Listener listening to each keypress. When this happens, we call updateSearchText and get the input-value from the event
-    const input = isOpen ? <input type="text" placeholder={placeholder} onInput={e => updateSearchText(e.target.value)} /> : null;
+    const input = isOpen ? <input type="text" data-cy="searchInput" placeholder={placeholder} onInput={e => updateSearchText(e.target.value)} /> : null;
   
     return (
       <div className={styles.search}>Click to search
         {input}
-        <span className={styles.fa} onClick={() => setIsOpen(!isOpen)}>
+        <span data-cy="searchIcon" className={styles.fa} onClick={() => setIsOpen(!isOpen)}>
         <FontAwesomeIcon icon="search" size='2x' />
       </span>
       </div>
